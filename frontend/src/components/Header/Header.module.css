@@ -1,0 +1,39 @@
+.headerWrapper {
+  height: 10vh;
+  background-color: red;
+}
+
+.headerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .headerLogoLinks {
+    display: flex;
+    align-items: center;
+    margin-inline-start: 5%;
+    gap: 1.2rem;
+
+    .headerLogo {
+      font-size: 2rem;
+    }
+
+    .headerLinks:not(:first-child){
+        margin-inline: 10px
+    }
+  }
+
+  .headerSearchLinks:last-child{
+    margin-inline-end: 5%;
+
+    .signButton:not(:nth-child(2)){
+        margin-inline-start: 10px;
+    }
+
+    .headerInputSearch{
+        margin-inline-end: 20px;
+    }
+  }
+}
+
