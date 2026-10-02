@@ -1,6 +1,7 @@
 .headerWrapper {
   height: 10vh;
-  background-color: red;
+  background-color: #f7f5ef;
+  font-family: "Big Shoulders", sans-serif;
 }
 
 .headerContainer {
@@ -17,23 +18,52 @@
 
     .headerLogo {
       font-size: 2rem;
+      font-weight: 600;
     }
 
-    .headerLinks:not(:first-child){
-        margin-inline: 10px
+    .headerLinks:not(:first-child) {
+      margin-inline-start: 10px;
     }
   }
 
-  .headerSearchLinks:last-child{
+  .headerLinks {
+    color: #000;
+    text-decoration: none;
+    border: 1px solid lightgray;
+    padding: 10px 12px;
+    border-radius: 30px;
+  }
+  .headerLinks:hover {
+    font-weight: 500;
+    border: 1px solid black;
+  }
+  .signUpButton{
+    background-color: red;
+    color: whitesmoke;
+    font-weight: 600;
+  }
+
+  .headerSearchLinks:last-child {
     margin-inline-end: 5%;
 
-    .signButton:not(:nth-child(2)){
-        margin-inline-start: 10px;
+    .headerInputSearch{
+      padding: 8px 20px;
+      min-width: 20vw;
+      border-radius: 30px;
+      /* border: 1px solid rgba(20, 18, 14, 0, 0.10); */
+      border: 1px solid lightgray;
+      
+    }
+    .headerInputSearch:focus{
+      outline: 1px solid black;
     }
 
-    .headerInputSearch{
-        margin-inline-end: 20px;
+    .signUpButton{
+      margin-inline-start: 10px;
+    }
+
+    .headerInputSearch {
+      margin-inline-end: 20px;
     }
   }
 }
-
