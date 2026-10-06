@@ -1,5 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
