@@ -16,9 +16,21 @@ export default function Hero() {
       day: 'numeric',
       month: "short"
     });
-
     return formattedDate;
   }
+
+  function toNorwegianTime(data){
+    const utcTime = new Date(data);
+    const options = {
+      timeZone: 'Europe/Oslo',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    };
+    const norwayTime = new Intl.DateTimeFormat('no-NO', options).format(utcTime)
+    return norwayTime;
+  }
+
     const { data, isPending, error } = useFetchWeeks();
   return (
     <section>
@@ -29,7 +41,7 @@ export default function Hero() {
             day={dateToDay(event.date.slice(0, 10))}
             date={dateToMonth(event.date)}
             completed={event.status?.type?.completed}
-            time={event.date.slice(11, 16)}
+            time={toNorwegianTime(event.date)}
             homeTeamLogo={event.competitions[0].competitors[0].team.logo}
             homeTeam={event.competitions[0].competitors[0].team.name}
             awayTeamLogo={event.competitions[0].competitors[1].team.logo}
