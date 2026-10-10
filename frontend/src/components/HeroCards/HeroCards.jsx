@@ -7,11 +7,14 @@ export default function HeroCards({
   date,
   completed,
   time,
-  logo,
+  homeTeamLogo,
   homeTeam,
   awayTeam,
-  record,
-  score,
+  awayTeamLogo,
+  homeTeamRecord,
+  awayTeamRecord,
+  homeTeamScore,
+  awayTeamScore
 }) {
   return (
     <section className={styles.heroCardWrapper}>
@@ -23,17 +26,17 @@ export default function HeroCards({
         </div>
         <div className={styles.heroCardHomeTeam}>
           <div className={styles.heroCardHomeTeamName}>
-            <img src={logo} alt={`${homeTeam} logo`} />
+            <img className={styles.teamLogo} src={homeTeamLogo} alt={`${homeTeam} logo`} />
             <Link>{homeTeam}</Link>
           </div>
-          <span>{time > time ? score : record}</span>
+          <span>{time > time ? homeTeamScore : homeTeamRecord}</span>
         </div>
         <div className={styles.heroCardAwayTeam}>
           <div className={styles.heroCardAwayTeamName}>
-            <img src={logo} alt={`${awayTeam} logo`} />
+            <img className={styles.teamLogo} src={awayTeamLogo} alt={`${awayTeam} logo`} />
             <Link>{awayTeam}</Link>
           </div>
-          <span>{time > time ? score : record}</span>
+          <span>{time > time ? awayTeamScore : awayTeamRecord}</span>
         </div>
       </div>
     </section>
