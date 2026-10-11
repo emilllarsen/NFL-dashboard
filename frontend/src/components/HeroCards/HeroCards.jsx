@@ -1,7 +1,6 @@
 import styles from "./HeroCards.module.css";
 import { Link } from "react-router";
 
-
 export default function HeroCards({
   day,
   date,
@@ -14,7 +13,7 @@ export default function HeroCards({
   homeTeamRecord,
   awayTeamRecord,
   homeTeamScore,
-  awayTeamScore
+  awayTeamScore,
 }) {
   return (
     <section className={styles.heroCardWrapper}>
@@ -26,15 +25,23 @@ export default function HeroCards({
         </div>
         <div className={styles.heroCardHomeTeam}>
           <div className={styles.heroCardHomeTeamName}>
-            <img className={styles.teamLogo} src={homeTeamLogo} alt={`${homeTeam} logo`} />
-            <Link>{homeTeam}</Link>
+            <img
+              className={styles.teamLogo}
+              src={homeTeamLogo}
+              alt={`${homeTeam} logo`}
+            />
+            <Link className={styles.teamLink}>{homeTeam}</Link>
           </div>
-          <span>{time > time ? homeTeamScore : homeTeamRecord}</span>
+            <span>{time > time ? homeTeamScore : homeTeamRecord}</span>
         </div>
         <div className={styles.heroCardAwayTeam}>
           <div className={styles.heroCardAwayTeamName}>
-            <img className={styles.teamLogo} src={awayTeamLogo} alt={`${awayTeam} logo`} />
-            <Link>{awayTeam}</Link>
+            <img
+              className={styles.teamLogo}
+              src={awayTeamLogo}
+              alt={`${awayTeam} logo`}
+            />
+            <Link className={styles.teamLink}>{awayTeam}</Link>
           </div>
           <span>{time > time ? awayTeamScore : awayTeamRecord}</span>
         </div>

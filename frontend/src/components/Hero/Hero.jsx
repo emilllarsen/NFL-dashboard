@@ -33,7 +33,7 @@ export default function Hero() {
 
     const { data, isPending, error } = useFetchWeeks();
   return (
-    <section>
+    <section className={styles.heroWrapper}>
       <h1 className={styles.heroMainHeading}>Week {data?.week?.number}</h1>
       {data?.events?.map((event) => (
         <div key={event.id}>
