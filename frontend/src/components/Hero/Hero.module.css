@@ -1,0 +1,4 @@
+.heroMainHeading{
+    font-size: clamp(3rem, 5rem, 6rem);
+    /* font-family: "Big Shoulders", sans-serif; */
+}

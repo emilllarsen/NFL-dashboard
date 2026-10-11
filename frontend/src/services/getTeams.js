@@ -1,7 +1,6 @@
-import { apiFetch } from "../api.js";
-
+import { siteApiFetch } from "../api/siteApi.js";
 export async function getTeams(){
-    const allTeams = await apiFetch("/teams");
+    const allTeams = await siteApiFetch("/teams");
     return allTeams;
 }
 

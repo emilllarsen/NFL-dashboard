@@ -1,4 +1,4 @@
-export async function apiFetch(endpoint, options = {}) {
+export async function siteApiFetch(endpoint, options = {}) {
   const API_URI = "https://site.api.espn.com/apis/site/v2/sports/football/nfl";
 
   const response = await fetch(API_URI + endpoint, options);
