@@ -1,3 +1,52 @@
+.heroCardWrapper{
+    padding: 10px 16px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 250px;
+    background-color: white;
+}
+
+.heroCardWrapper > * {
+    font-family: "IBM Plex Sans", sans-serif;   
+}
+
+.heroCardTopRow{
+    display: flex;
+    gap: 10px;
+}
+
+.losingTeam{
+    opacity: .5;
+}
+
+.heroCardHomeTeam, .heroCardAwayTeam{
+    margin-block-start: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.heroCardHomeTeam{
+    margin-block-end: 8px;
+}
+.heroCardHomeTeamName, .heroCardAwayTeamName{
+    display: flex;
+    align-items: center;
+}
+
+.teamLink{
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+}
+.teamLink:hover{
+    text-decoration: underline;
+}
+
 .teamLogo{
     width: 24px;
+    margin-inline-end: 8px;
+}
+
+.bold{
+    font-weight: bold;
 }

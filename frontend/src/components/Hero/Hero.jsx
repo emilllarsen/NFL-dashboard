@@ -1,58 +1,84 @@
-import styles from './Hero.module.css';
-import { useFetchWeeks } from '../../hooks/fetchWeekDates/useFetchWeeks.js';
-import HeroCards from '../HeroCards/HeroCards.jsx';
+import styles from "./Hero.module.css";
+import { useFetchWeeks } from "../../hooks/fetchWeekDates/useFetchWeeks.js";
+import HeroCards from "../HeroCards/HeroCards.jsx";
+import { Link } from "react-router";
 
 export default function Hero() {
-
-  function dateToDay(date){
+  function dateToDay(date) {
     const dateStr = date;
-    const dayName = new Date(dateStr).toLocaleDateString('en-US', {weekday: "long"});
+    const dayName = new Date(dateStr).toLocaleDateString("en-US", {
+      weekday: "long",
+    });
     return dayName;
   }
 
-  function dateToMonth(date){
+  function dateToMonth(date) {
     const dateStr = date;
-    const formattedDate = new Date(dateStr).toLocaleDateString('en-US', {
-      day: 'numeric',
-      month: "short"
+    const formattedDate = new Date(dateStr).toLocaleDateString("en-US", {
+      day: "numeric",
+      month: "short",
     });
     return formattedDate;
   }
 
-  function toNorwegianTime(data){
+  function toNorwegianTime(data) {
     const utcTime = new Date(data);
     const options = {
-      timeZone: 'Europe/Oslo',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false
+      timeZone: "Europe/Oslo",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
     };
-    const norwayTime = new Intl.DateTimeFormat('no-NO', options).format(utcTime)
+    const norwayTime = new Intl.DateTimeFormat("no-NO", options).format(
+      utcTime,
+    );
     return norwayTime;
   }
 
-    const { data, isPending, error } = useFetchWeeks();
+  const { data, isPending, error } = useFetchWeeks();
+
+  if (isPending) {
+    return <div>Loading....</div>;
+  }
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   return (
     <section>
       <h1 className={styles.heroMainHeading}>Week {data?.week?.number}</h1>
-      {data?.events?.map((event) => (
-        <div key={event.id}>
-          <HeroCards 
-            day={dateToDay(event.date.slice(0, 10))}
-            date={dateToMonth(event.date)}
-            completed={event.status?.type?.completed}
-            time={toNorwegianTime(event.date)}
-            homeTeamLogo={event.competitions[0].competitors[0].team.logo}
-            homeTeam={event.competitions[0].competitors[0].team.name}
-            awayTeamLogo={event.competitions[0].competitors[1].team.logo}
-            awayTeam={event.competitions[0].competitors[1].team.name}
-            homeTeamRecord={event.competitions[0].competitors[0].records[0].summary}
-            awayTeamRecord={event.competitions[0].competitors[1].records[0].summary}
-            homeTeamScore={event.competitions[0].competitors[0].score}
-            awayTeamScore={event.competitions[0].competitors[1].score}
-          />
-        </div>
-      ))}
+      <section className={styles.heroCardWrapper}>
+        {data?.events?.map((event) => (
+          <div key={event.id}>
+            <HeroCards
+              day={dateToDay(event.date.slice(0, 10))}
+              date={dateToMonth(event.date)}
+              completed={event.status?.type?.completed}
+              onGoing={event.status.type.description}
+              time={toNorwegianTime(event.date)}
+              homeTeamLogo={event.competitions[0].competitors[0].team.logo}
+              homeTeam={event.competitions[0].competitors[0].team.name}
+              awayTeamLogo={event.competitions[0].competitors[1].team.logo}
+              awayTeam={event.competitions[0].competitors[1].team.name}
+              homeTeamRecord={
+                event.competitions[0].competitors[0].records[0].summary
+              }
+              awayTeamRecord={
+                event.competitions[0].competitors[1].records[0].summary
+              }
+              homeTeamScore={event.competitions[0].competitors[0].score}
+              awayTeamScore={event.competitions[0].competitors[1].score}
+              period={event.competitions[0].status.period}
+            />
+          </div>
+        ))}
+      </section>
+      <div className={styles.scheduleContainer}>
+        <Link to="/schedule" className={styles.goToSchedule}>
+          See Full Schedule
+        </Link>
+        <p className={styles.gamesLength}>{data?.events?.length} games</p>
+      </div>
     </section>
-  )
+  );
 }
