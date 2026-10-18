@@ -1,0 +1,19 @@
+.byeWeekWrapper{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 6px 8px;
+    background-color: #fff;
+}
+.byeWeekWrapper:hover{
+    border: 1px solid black;
+}
+.byeWeekContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.byeWeekLink{
+    text-decoration: none;
+    color: inherit;
+}

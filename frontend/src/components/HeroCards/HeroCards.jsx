@@ -19,7 +19,6 @@ export default function HeroCards({
 }) {
   return (
     <section className={styles.heroCardWrapper}>
-      <div className={styles.heroCardContainer}>
         <div className={styles.heroCardTopRow}>
           <span>{day}</span>
           <span>{date}</span>
@@ -53,7 +52,6 @@ export default function HeroCards({
           </div>
           <span>{period >= 1 ? awayTeamScore : awayTeamRecord}</span>
         </div>
-      </div>
     </section>
   );
 }

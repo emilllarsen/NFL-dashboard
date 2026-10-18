@@ -1,6 +1,7 @@
 import styles from "./Hero.module.css";
 import { useFetchWeeks } from "../../hooks/fetchWeekDates/useFetchWeeks.js";
 import HeroCards from "../HeroCards/HeroCards.jsx";
+import ByeWeekHeroCard from "../ByeWeekHeroCard/ByeWeekHeroCard.jsx";
 import { Link } from "react-router";
 
 export default function Hero() {
@@ -47,9 +48,17 @@ export default function Hero() {
   return (
     <section>
       <h1 className={styles.heroMainHeading}>Week {data?.week?.number}</h1>
+      <div className={styles.byeWeek}>
+        <span>{data?.week?.teamsOnBye?.length} teams on bye</span>
+        {data?.week?.teamsOnBye?.map((byeWeek) => (
+          <section key={byeWeek.id}>
+            <ByeWeekHeroCard logo={byeWeek.logo} teams={byeWeek.name} />
+          </section>
+        ))}
+      </div>
       <section className={styles.heroCardWrapper}>
         {data?.events?.map((event) => (
-          <div key={event.id}>
+          <section key={event.id}>
             <HeroCards
               day={dateToDay(event.date.slice(0, 10))}
               date={dateToMonth(event.date)}
@@ -70,7 +79,7 @@ export default function Hero() {
               awayTeamScore={event.competitions[0].competitors[1].score}
               period={event.competitions[0].status.period}
             />
-          </div>
+          </section>
         ))}
       </section>
       <div className={styles.scheduleContainer}>
