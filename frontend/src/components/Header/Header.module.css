@@ -1,7 +1,6 @@
 .headerWrapper {
   height: 10vh;
   background-color: #f7f5ef;
-  font-family: "Big Shoulders", sans-serif;
 }
 
 .headerContainer {
@@ -43,27 +42,14 @@
     font-weight: 600;
   }
 
-  .headerSearchLinks:last-child {
-    margin-inline-end: 5%;
-
     .headerInputSearch{
       padding: 8px 20px;
       min-width: 20vw;
       border-radius: 30px;
-      /* border: 1px solid rgba(20, 18, 14, 0, 0.10); */
       border: 1px solid lightgray;
       
     }
     .headerInputSearch:focus{
       outline: 1px solid black;
     }
-
-    .signUpButton{
-      margin-inline-start: 10px;
-    }
-
-    .headerInputSearch {
-      margin-inline-end: 20px;
-    }
-  }
 }
