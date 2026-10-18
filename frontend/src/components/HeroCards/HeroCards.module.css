@@ -6,10 +6,6 @@
     background-color: white;
 }
 
-.heroCardWrapper > * {
-    font-family: "IBM Plex Sans", sans-serif;   
-}
-
 .heroCardTopRow{
     display: flex;
     gap: 10px;

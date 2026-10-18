@@ -2,7 +2,12 @@
   font-size: clamp(3rem, 5rem, 6rem);
   margin-block-end: 16px;
 }
-
+.byeWeek{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block-end: 10px;
+}
 .heroCardWrapper {
   display: flex;
   gap: 16px;
@@ -26,7 +31,6 @@
 }
 
 .scheduleContainer {
-  font-family: "IBM Plex Sans", sans-serif;
   margin-block-start: 16px;
   display: flex;
   align-items: center;
