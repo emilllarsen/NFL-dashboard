@@ -25,11 +25,7 @@ export default function Header() {
               Stadiums
             </Link>
           </nav>
-        </div>
-        <div className={styles.headerSearchLinks}>
           <input className={styles.headerInputSearch} type="text" placeholder="Search 32 Teams"/>
-          <Link className={`${styles.signInButton} ${styles.headerLinks}`} to="/sign-in">Sign in</Link>
-          <Link className={`${styles.signUpButton} ${styles.headerLinks}`} to="/sign-up">Sign up</Link>
         </div>
       </div>
     </header>
