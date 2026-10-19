@@ -9,6 +9,7 @@ import Homepage from "./pages/Homepage/Homepage.jsx";
 import Schedule from "./pages/Schedule/Schedule.jsx";
 import Stats from "./pages/Stats/Stats.jsx";
 import Stadiums from "./pages/Stadiums/Stadiums.jsx";
+import IndividualPage from "./pages/IndividualPage/IndividualPage.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/stats" element={<Stats />} />
           <Route path="/stadiums" element={<Stadiums />} />
+          <Route path="/teams/:id" element={<IndividualPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

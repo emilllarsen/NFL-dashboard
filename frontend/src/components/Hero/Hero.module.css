@@ -14,6 +14,7 @@
   display: flex;
   gap: 16px;
   overflow-x: scroll;
+  scrollbar-color: #888 transparent;
 }
 
 .scheduleContainer {
