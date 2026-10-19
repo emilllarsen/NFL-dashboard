@@ -19,39 +19,55 @@ export default function HeroCards({
 }) {
   return (
     <section className={styles.heroCardWrapper}>
-        <div className={styles.heroCardTopRow}>
-          <span>{day}</span>
-          <span>{date}</span>
-          <span className={styles.bold}>
-            {completed === true
-              ? "Final"
-              : onGoing === "In Progress"
-                ? "In-Progress"
-                : time}
-          </span>
+      <div className={styles.heroCardTopRow}>
+        <span>{day}</span>
+        <span>{date}</span>
+        <span className={styles.bold}>
+          {completed === true
+            ? "Final"
+            : onGoing === "In Progress"
+              ? "In-Progress"
+              : time}
+        </span>
+      </div>
+      <div className={styles.heroCardHomeTeam}>
+        <div className={styles.heroCardHomeTeamName}>
+          <img
+            className={styles.teamLogo}
+            src={homeTeamLogo}
+            alt={`${homeTeam} logo`}
+            width="24"
+            height="24"
+          />
+          <Link className={styles.teamLink}>
+            {homeTeamScore < awayTeamScore ? (
+              <span className={styles.losingTeam}>{homeTeam}</span>
+            ) : (
+              homeTeam
+            )}
+          </Link>
         </div>
-        <div className={styles.heroCardHomeTeam}>
-          <div className={styles.heroCardHomeTeamName}>
-            <img
-              className={styles.teamLogo}
-              src={homeTeamLogo}
-              alt={`${homeTeam} logo`}
-            />
-            <Link className={styles.teamLink}>{homeTeamScore < awayTeamScore ? <span className={styles.losingTeam}>{homeTeam}</span> : homeTeam}</Link>
-          </div>
-          <span>{period >= 1 ? homeTeamScore : homeTeamRecord}</span>
+        <span>{period >= 1 ? homeTeamScore : homeTeamRecord}</span>
+      </div>
+      <div className={styles.heroCardAwayTeam}>
+        <div className={styles.heroCardAwayTeamName}>
+          <img
+            className={styles.teamLogo}
+            src={awayTeamLogo}
+            alt={`${awayTeam} logo`}
+            width="24"
+            height="24"
+          />
+          <Link className={styles.teamLink}>
+            {awayTeamScore < homeTeamScore ? (
+              <span className={styles.losingTeam}>{awayTeam}</span>
+            ) : (
+              awayTeam
+            )}
+          </Link>
         </div>
-        <div className={styles.heroCardAwayTeam}>
-          <div className={styles.heroCardAwayTeamName}>
-            <img
-              className={styles.teamLogo}
-              src={awayTeamLogo}
-              alt={`${awayTeam} logo`}
-            />
-            <Link className={styles.teamLink}>{awayTeamScore < homeTeamScore ? <span className={styles.losingTeam}>{awayTeam}</span> : awayTeam}</Link>
-          </div>
-          <span>{period >= 1 ? awayTeamScore : awayTeamRecord}</span>
-        </div>
+        <span>{period >= 1 ? awayTeamScore : awayTeamRecord}</span>
+      </div>
     </section>
   );
 }
