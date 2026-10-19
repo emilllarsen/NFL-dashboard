@@ -4,10 +4,6 @@
   padding: 6px 8px;
   background-color: #fff;
 
-  .byeWeekWrapper:hover {
-    border: 1px solid black;
-  }
-
   .byeWeekLink {
     text-decoration: none;
     color: inherit;
@@ -20,3 +16,6 @@
     }
   }
 }
+  .byeWeekWrapper:hover {
+    border: 1px solid black;
+  }
