@@ -2,6 +2,8 @@ import styles from "./HeroCards.module.css";
 import { Link } from "react-router";
 
 export default function HeroCards({
+  homeTeamId,
+  awayTeamId,
   day,
   period,
   date,
@@ -39,7 +41,7 @@ export default function HeroCards({
             width="24"
             height="24"
           />
-          <Link className={styles.teamLink}>
+          <Link to={`/teams/${homeTeamId}`} className={styles.teamLink}>
             {homeTeamScore < awayTeamScore ? (
               <span className={styles.losingTeam}>{homeTeam}</span>
             ) : (
@@ -58,7 +60,7 @@ export default function HeroCards({
             width="24"
             height="24"
           />
-          <Link className={styles.teamLink}>
+          <Link to={`/teams/${awayTeamId}`} className={styles.teamLink}>
             {awayTeamScore < homeTeamScore ? (
               <span className={styles.losingTeam}>{awayTeam}</span>
             ) : (

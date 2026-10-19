@@ -60,6 +60,8 @@ export default function Hero() {
         {data?.events?.map((event) => (
           <section key={event.id}>
             <HeroCards
+              homeTeamId={event.competitions[0].competitors[0].id}
+              awayTeamId={event.competitions[0].competitors[1].id}
               day={dateToDay(event.date.slice(0, 10))}
               date={dateToMonth(event.date)}
               completed={event.status?.type?.completed}
