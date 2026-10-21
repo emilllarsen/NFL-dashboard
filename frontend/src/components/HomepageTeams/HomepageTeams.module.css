@@ -1,0 +1,48 @@
+.homepageTeamWrapper {
+  margin-block-start: 2%;
+}
+.homepageTeamContainer {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-block: 10px 16px;
+}
+.homepageTeamCards:hover {
+  transform: translateY(-5px);
+}
+.homepageTeamCards {
+  background-image: url(../../assets/teamCardBackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 220ms;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  height: 205px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.teamName {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-inline-start: 20px;
+  padding-block-end: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.teamLogo {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+}
+.h2Heading {
+  font-size: 3rem;
+}
