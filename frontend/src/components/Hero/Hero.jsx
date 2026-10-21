@@ -52,7 +52,7 @@ export default function Hero() {
         <span>{data?.week?.teamsOnBye?.length} teams on bye</span>
         {data?.week?.teamsOnBye?.map((byeWeek) => (
           <section key={byeWeek.id}>
-            <ByeWeekHeroCard logo={byeWeek.logo} teams={byeWeek.name} />
+            <ByeWeekHeroCard id={byeWeek.id} logo={byeWeek.logo} teams={byeWeek.name} />
           </section>
         ))}
       </div>
